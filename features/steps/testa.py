@@ -38,3 +38,32 @@ def step_impl(context):
     home = Home.HomePage(context.driver)
     assert home.isGreetingDisplayed()
     time.sleep(4)
+
+@when('I click add to cart button')
+def step_impl(context):
+    home = Login.LoginPage(context.driver)
+    home.iconbasketbtn()
+    time.sleep(4)
+
+@when('I go to cart page')
+def step_impl(context):
+    context.driver.get("http://35.158.94.191:3000/other/sepet")
+    time.sleep(4)
+
+@when('I click cartapprove button')
+def step_impl(context):
+    home = Login.LoginPage(context.driver)
+    home.cartapprovebtn()
+    time.sleep(4)
+
+@when('I click adresselect button')
+def step_impl(context):
+    home = Login.LoginPage(context.driver)
+    home.adressselectradio()
+    time.sleep(4)
+
+@when('I click completetrade button')
+def step_impl(context):
+    home = Login.LoginPage(context.driver)
+    home.completeTrade()
+    time.sleep(30)
